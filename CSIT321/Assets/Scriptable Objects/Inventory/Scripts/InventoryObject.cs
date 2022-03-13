@@ -3,14 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;     //path that we want to save our file to
-    public ItemDatabaseObject database;
+    private ItemDatabaseObject database;
     //List of InventorySlot to hold our items
     public List<InventorySlot> Container = new List<InventorySlot>();
+
+    //make sure our database variable is set
+    private void OnEnable()
+    {
+        //make a check to ensure this code is only being run in unity editor
+#if UNITY_EDITOR
+        //every time scriptable object runs this function, automatically sets database to where the file is inside the editor
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+#else
+        database = Resources.Load<ItemDatabaseObject>("Database");
+#endif
+    }
 
     public void AddItem(ItemObject _item, int _amount)
     {

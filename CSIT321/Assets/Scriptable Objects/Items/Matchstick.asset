@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 258d03f310f48134494c5254033f14b1, type: 3}
   m_Name: Matchstick
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3232999394788459595, guid: ff811ae430f5d4349afab59f01d37979, type: 3}
   type: 2
   description: Used to burn a currently distracted enemy.

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae1db394107d8846971c8289694ca69, type: 3}
   m_Name: Molotov
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 3232999394788459595, guid: 9d9faec54cee6bd42b95fa8ff2b051c3, type: 3}
   type: 1
   description: Used to instantly kill an enemy.

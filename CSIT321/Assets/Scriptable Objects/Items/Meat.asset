@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b4b1eea8b6db643b9ecfed81522451, type: 3}
   m_Name: Meat
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  prefab: {fileID: 1624550511224752295, guid: 5d6e741c4be6a2e4486477fbc1f1fef8, type: 3}
   type: 0
   description: Effective against zombies.

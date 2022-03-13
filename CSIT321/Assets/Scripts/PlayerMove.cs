@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMove : MonoBehaviour
+public class PlayerMove : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb;

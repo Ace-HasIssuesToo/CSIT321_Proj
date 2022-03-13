@@ -17,6 +17,21 @@ public class PlayerInventory : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        //when user presses space
+        if (Input.GetKeyDown("1"))
+        {
+            inventory.Save();
+        }
+
+        //when user presses space
+        if (Input.GetKeyDown("2"))
+        {
+            inventory.Load();
+        }
+    }
+
     //clear items in inventory
     private void OnApplicationQuit()
     {

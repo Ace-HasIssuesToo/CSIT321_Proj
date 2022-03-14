@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class EnemyAI : MonoBehaviour
 {
+    public AIPath AiPath;
+
     public FieldOfView fov;
+    public Animator animator;
 
     /// <summary>Target points to move to in order</summary>
     public Transform[] targets;
@@ -21,6 +24,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         agent = GetComponent<IAstarAI>();
     }
 
@@ -28,7 +32,7 @@ public class EnemyAI : MonoBehaviour
     {
         if (targets.Length == 0) return;
 
-        bool search = true;
+        bool search = false;
 
         // Note: using reachedEndOfPath and pathPending instead of reachedDestination here because
         // if the destination cannot be reached by the agent, we don't want it to get stuck, we just want it to get as close as possible and then move on.
@@ -55,5 +59,18 @@ public class EnemyAI : MonoBehaviour
 
         fov.setOrigin(transform.position);
         fov.setLookDirection(dirToTarget);
+
+        if(AiPath.reachedDestination)
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1);
+            animator.SetFloat("Horizontal", dirToTarget.x);
+            animator.SetFloat("Vertical", dirToTarget.y);
+        }
+       
     }
+
 }

@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class RandomPatrol : MonoBehaviour
 {
+    public AIPath AiPath;
+
     Vector3 startingPosition;
     public FieldOfView fov;
 
-    public float countdown = 10;
+    public Animator animator;
+
+    public float countdown = 5;
 
     IAstarAI agent;
     float switchTime = float.PositiveInfinity;
@@ -32,7 +36,7 @@ public class RandomPatrol : MonoBehaviour
         {
             search = true;
             setDestination = true;
-            countdown = 10;
+            countdown = 5;
         }
 
         if(setDestination) agent.destination = getRoamingPosition();
@@ -45,6 +49,17 @@ public class RandomPatrol : MonoBehaviour
 
         fov.setOrigin(transform.position);
         fov.setLookDirection(dirToTarget);
+
+        if (AiPath.reachedDestination)
+        {
+            animator.SetFloat("Speed", 0);
+        }
+        else
+        {
+            animator.SetFloat("Speed", 1);
+            animator.SetFloat("Horizontal", dirToTarget.x);
+            animator.SetFloat("Vertical", dirToTarget.y);
+        }
     }
 
     private Vector3 getRoamingPosition()

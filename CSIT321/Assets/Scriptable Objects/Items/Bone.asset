@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5b4b1eea8b6db643b9ecfed81522451, type: 3}
   m_Name: Bone
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3232999394788459595, guid: cc89a8cf3a2ec544da2e52682e4657e6, type: 3}
+  Name: 
+  Id: 0
+  uiDisplay: {fileID: 21300000, guid: c646269b37b42484a9f7a5e603f4ebe1, type: 3}
   type: 0
   description: Effective against skeletons.

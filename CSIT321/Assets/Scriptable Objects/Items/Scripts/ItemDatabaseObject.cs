@@ -8,16 +8,13 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
 {
     public ItemObject[] Items;  //array of all items that exist within game
     //make dictionary to import item and return id of item
-    public Dictionary<ItemObject, int> GetId = new Dictionary<ItemObject, int>();
     public Dictionary<int, ItemObject> GetItem = new Dictionary<int, ItemObject>();
 
     public void OnAfterDeserialize()
-    {
-        GetId = new Dictionary<ItemObject, int>();    //clear dictionary so we are not duplicating anything
-        GetItem = new Dictionary<int, ItemObject>();    
+    {   
         for (int i = 0; i < Items.Length; i++)      //loop through all our items
         {
-            GetId.Add(Items[i], i);     //add items and id for the item will be i
+            Items[i].Id = i;
             GetItem.Add(i, Items[i]);
             //now everytime unity serializes the scriptable object, it will automatically populate the Dictionary with reference values based off
             //our Items array created in unity editor 
@@ -27,5 +24,6 @@ public class ItemDatabaseObject : ScriptableObject, ISerializationCallbackReceiv
     //not used
     public void OnBeforeSerialize()
     {
+        GetItem = new Dictionary<int, ItemObject>();
     }
 }

@@ -9,10 +9,10 @@ public class PlayerInventory : MonoBehaviour
     //for collision trigger
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var item = collision.GetComponent<Item>();
+        var item = collision.GetComponent<GroundItem>();
         if (item)   //if it was able to find an item
         {
-            inventory.AddItem(item.item, 1);    //add 1 of the item to inventory
+            inventory.AddItem(new Item(item.item), 1);    //add 1 of the item to inventory
             Destroy(collision.gameObject);      //destroy the picked up item
         }
     }
@@ -35,6 +35,6 @@ public class PlayerInventory : MonoBehaviour
     //clear items in inventory
     private void OnApplicationQuit()
     {
-        inventory.Container.Clear();
+        inventory.Container.Items.Clear();
     }
 }

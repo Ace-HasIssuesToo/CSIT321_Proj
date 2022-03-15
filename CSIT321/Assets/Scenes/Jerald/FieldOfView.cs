@@ -9,15 +9,15 @@ public class FieldOfView : MonoBehaviour
     private Vector3 origin;
 
     private float fov;
-    private float viewDistance;
+    [SerializeField]private float viewDistance;
     private float startingAngle;
 
     private void Start()
     {
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        fov = 90f;
-        viewDistance = 1f;
+        fov = 45f;
+        //viewDistance = 1f;
         origin = Vector3.zero;
     }
 
@@ -107,5 +107,25 @@ public class FieldOfView : MonoBehaviour
         //angle = 0 -> 360
         float angleRad = angle * (Mathf.PI / 180f);
         return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
+    }
+
+    public void setViewDistance(float viewDistance)
+    {
+        this.viewDistance = viewDistance;
+    }
+
+    public float getViewDistance()
+    {
+        return viewDistance;
+    }
+
+    public void setFovAngle(float FovAngle)
+    {
+        this.fov = FovAngle;
+    }
+
+    public float getFovAngle()
+    {
+        return fov;
     }
 }

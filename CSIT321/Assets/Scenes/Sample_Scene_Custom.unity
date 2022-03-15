@@ -3663,11 +3663,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d468ce9adf8c9274a8491034e6c9f291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 000000
-  slots:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1327255507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3857,9 +3852,10 @@ GameObject:
   - component: {fileID: 1461417485}
   - component: {fileID: 1461417484}
   - component: {fileID: 1461417483}
+  - component: {fileID: 1461417488}
   m_Layer: 0
   m_Name: zombie_down_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3871,12 +3867,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461417482}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 733ef3613b4c8dc42a7d5e32cf90baf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AiPath: {fileID: 0}
   fov: {fileID: 1987583168}
+  animator: {fileID: 0}
   targets:
   - {fileID: 1414921253}
   - {fileID: 1269779857}
@@ -3991,7 +3989,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -8003094699114484159, guid: e1714dd1cee5e934388ba5db5c9b26d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4011,12 +4009,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461417482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.22, y: 0.68, z: 0}
+  m_LocalPosition: {x: -1.35, y: 0.68, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1461417488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461417482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4e61b9b486ee544ea5222ce34405ede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AiPath: {fileID: 0}
+  fov: {fileID: 1987583168}
+  animator: {fileID: 0}
+  targets:
+  - {fileID: 1414921253}
+  - {fileID: 1269779857}
+  - {fileID: 1472770406}
+  delay: 1
 --- !u!1 &1463811473
 GameObject:
   m_ObjectHideFlags: 0

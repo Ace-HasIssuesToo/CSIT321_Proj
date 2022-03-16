@@ -2357,6 +2357,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  viewDistance: 1
 --- !u!4 &303606684
 Transform:
   m_ObjectHideFlags: 0
@@ -2741,6 +2742,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  viewDistance: 1
 --- !u!1 &811012980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3079,6 +3081,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  viewDistance: 1
 --- !u!4 &1355856956
 Transform:
   m_ObjectHideFlags: 0

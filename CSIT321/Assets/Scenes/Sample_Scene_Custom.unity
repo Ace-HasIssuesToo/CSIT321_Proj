@@ -3853,6 +3853,7 @@ GameObject:
   - component: {fileID: 1461417484}
   - component: {fileID: 1461417483}
   - component: {fileID: 1461417488}
+  - component: {fileID: 1461417489}
   m_Layer: 0
   m_Name: zombie_down_0
   m_TagString: Enemy
@@ -4027,14 +4028,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e61b9b486ee544ea5222ce34405ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AiPath: {fileID: 0}
+  AiPath: {fileID: 1461417484}
   fov: {fileID: 1987583168}
-  animator: {fileID: 0}
+  fov2: {fileID: 1987583168}
+  animator: {fileID: 1461417489}
   targets:
   - {fileID: 1414921253}
   - {fileID: 1269779857}
   - {fileID: 1472770406}
   delay: 1
+--- !u!95 &1461417489
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461417482}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3fc1162a03e4c54994f21b4a762dff2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1463811473
 GameObject:
   m_ObjectHideFlags: 0
@@ -4979,6 +5000,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 8
+  viewDistance: 0
 --- !u!23 &1987583169
 MeshRenderer:
   m_ObjectHideFlags: 0
